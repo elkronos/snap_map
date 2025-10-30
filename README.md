@@ -26,7 +26,7 @@ source("build\_snap\_2024\_dashboard.R")
 
 
 
-> The script embeds the requested example Census API key. Replace with your own if needed (see \*\*Setup\*\*).
+> The script embeds the requested example Census API key. Replace with your own if needed (see **Setup**).
 
 
 
@@ -38,35 +38,35 @@ source("build\_snap\_2024\_dashboard.R")
 
 
 
-\- \*\*Interactive county map (Leaflet)\*\*
+\- **Interactive county map (Leaflet)**
 
 &nbsp; - Color = county winner (customizable hues)
 
 &nbsp; - Fill depth = SNAP% binned to 2–10 quantiles (default 5; change via gear ⚙️)
 
-&nbsp; - \*\*Hover tooltips\*\*: county name, SNAP%, households, estimated SNAP households
+&nbsp; - **Hover tooltips**: county name, SNAP%, households, estimated SNAP households
 
-&nbsp; - Selected states show \*\*darker borders/full opacity\*\*; unselected states are dimmed
-
-
-
-\- \*\*Right-side overlaid bars (Plotly)\*\*
-
-&nbsp; - \*\*Outer bars\*\*: % of \*\*all households\*\* voting Blue/Red/Other (household-weighted)
-
-&nbsp; - \*\*Inner bars\*\*: % of \*\*all households on SNAP\*\* that voted that party (overlay)
-
-&nbsp; - Updates live as you select states (multi-select) or \*\*Clear\*\* selections
+&nbsp; - Selected states show **darker borders/full opacity**; unselected states are dimmed
 
 
 
-\- \*\*Dashboard pills\*\*
+\- **Right-side overlaid bars (Plotly)**
+
+&nbsp; - **Outer bars**: % of **all households** voting Blue/Red/Other (household-weighted)
+
+&nbsp; - **Inner bars**: % of **all households on SNAP** that voted that party (overlay)
+
+&nbsp; - Updates live as you select states (multi-select) or **Clear** selections
+
+
+
+\- **Dashboard pills**
 
 &nbsp; - Total votes, total households on SNAP, red counties, blue counties (K/M formatting)
 
 
 
-\- \*\*Single HTML file\*\* — great for GitHub Pages, Netlify, S3, or just double-click locally
+\- **Single HTML file** — great for GitHub Pages, Netlify, S3, or just double-click locally
 
 
 
@@ -78,19 +78,19 @@ source("build\_snap\_2024\_dashboard.R")
 
 
 
-\- \*\*SNAP participation\*\*: ACS 2019–2023 5-year, Data Profile  
+\- **SNAP participation**: ACS 2019–2023 5-year, Data Profile  
 
 &nbsp; - `DP03\_0074PE` — % of households on SNAP  
 
 &nbsp; - `DP02\_0001E` — total households
 
-\- \*\*2024 County Results\*\*: County-level U.S. Presidential results (public CSV)
+\- **2024 County Results**: County-level U.S. Presidential results (public CSV)
 
-\- \*\*Geometries\*\*: 2023 cartographic boundaries (states \& counties), simplified for web
+\- **Geometries**: 2023 cartographic boundaries (states \& counties), simplified for web
 
 
 
-> Data are fetched \*\*once at build time\*\* and embedded in the HTML — no runtime calls.
+> Data are fetched **once at build time** and embedded in the HTML — no runtime calls.
 
 
 
@@ -124,9 +124,9 @@ Optional:
 
 
 
-1\. \*\*Clone\*\* this repo and open the project in R/RStudio.
+1\. **Clone** this repo and open the project in R/RStudio.
 
-2\. \*\*(Optional) Use your own Census API key\*\*
+2\. **(Optional) Use your own Census API key**
 
 &nbsp;  ~~~r
 
@@ -136,7 +136,7 @@ Optional:
 
 &nbsp;  Restart R. The script also sets the key for the current session.
 
-3\. \*\*Build\*\*
+3\. **Build**
 
 &nbsp;  ~~~r
 
@@ -156,17 +156,17 @@ Optional:
 
 
 
-1\. \*\*Shapes\*\*: Downloads 2023 cartographic state \& county geometries (WGS84) via `tigris`; lightly simplifies with `rmapshaper`.
+1\. **Shapes**: Downloads 2023 cartographic state \& county geometries (WGS84) via `tigris`; lightly simplifies with `rmapshaper`.
 
-2\. \*\*ACS\*\*: Retrieves SNAP% \& household counts via `tidycensus::get\_acs` and normalizes Data Profile variable names.
+2\. **ACS**: Retrieves SNAP% \& household counts via `tidycensus::get\_acs` and normalizes Data Profile variable names.
 
-3\. \*\*Election\*\*: Loads 2024 county results; derives `per\_dem`, `per\_gop`, `per\_other`, and `county\_winner`.
+3\. **Election**: Loads 2024 county results; derives `per\_dem`, `per\_gop`, `per\_other`, and `county\_winner`.
 
-4\. \*\*Join\*\*: Merges ACS + election to counties; computes `snap\_hh\_est = hh\_total \* snap\_pct/100`.
+4\. **Join**: Merges ACS + election to counties; computes `snap\_hh\_est = hh\_total \* snap\_pct/100`.
 
-5\. \*\*Embed\*\*: Writes state \& county GeoJSON to temp files, \*\*reads them back as strings\*\*, and injects them into the HTML’s JS payload.
+5\. **Embed**: Writes state \& county GeoJSON to temp files, **reads them back as strings**, and injects them into the HTML’s JS payload.
 
-6\. \*\*UI\*\*: Leaflet map + Plotly bars + KPI pills; state multi-select, \*\*Clear\*\* button, and \*\*gear\*\* to change bin count.
+6\. **UI**: Leaflet map + Plotly bars + KPI pills; state multi-select, **Clear** button, and **gear** to change bin count.
 
 
 
@@ -178,11 +178,11 @@ Optional:
 
 
 
-\- \*\*Open locally\*\*: double-click `snap\_2024\_dashboard.html`.
+\- **Open locally**: double-click `snap\_2024\_dashboard.html`.
 
-\- \*\*GitHub Pages\*\*: commit the HTML to the repo and enable Pages (e.g., main branch / root).
+\- **GitHub Pages**: commit the HTML to the repo and enable Pages (e.g., main branch / root).
 
-\- \*\*Any static host\*\*: upload the single HTML file. No server required.
+\- **Any static host**: upload the single HTML file. No server required.
 
 
 
@@ -218,7 +218,7 @@ Swap these for brand/accessible palettes (e.g., Okabe–Ito).
 
 ### SNAP binning (map shading)
 
-\- Default \*\*5\*\* quantiles; change at runtime from \*\*2–10\*\* via the gear menu.  
+\- Default **5** quantiles; change at runtime from **2–10** via the gear menu.  
 
 \- Binning recalculates and recolors immediately.
 
@@ -264,25 +264,25 @@ renv::restore()
 
 
 
-\- \*\*Blank page / nothing loads\*\*  
+\- **Blank page / nothing loads**  
 
 &nbsp; Open the browser console (F12) and look for errors (e.g., JSON parse). This can occur if the generated HTML was edited and quotes were corrupted. Re-run the script and avoid manual edits in the HTML.
 
 
 
-\- \*\*No tooltips\*\*  
+\- **No tooltips**  
 
 &nbsp; Ensure you’re hovering over counties (not just borders). Tooltips show county name + SNAP% + HH + est. SNAP HH.
 
 
 
-\- \*\*Selector looks tall\*\*  
+\- **Selector looks tall**  
 
 &nbsp; It’s compact at ~100px height; adjust in the `<style>` block (`select#stateSelect`) if desired.
 
 
 
-\- \*\*Initial load feels heavy\*\*  
+\- **Initial load feels heavy**  
 
 &nbsp; Reduce geometry size by lowering the `keep` value:
 
