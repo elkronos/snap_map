@@ -40,29 +40,29 @@ source("build\_snap\_2024\_dashboard.R")
 
 \- **Interactive county map (Leaflet)**
 
-&nbsp; - Color = county winner (customizable hues)
+- Color = county winner (customizable hues)
 
-&nbsp; - Fill depth = SNAP% binned to 2–10 quantiles (default 5; change via gear ⚙️)
+- Fill depth = SNAP% binned to 2–10 quantiles (default 5; change via gear ⚙️)
 
-&nbsp; - **Hover tooltips**: county name, SNAP%, households, estimated SNAP households
+- **Hover tooltips**: county name, SNAP%, households, estimated SNAP households
 
-&nbsp; - Selected states show **darker borders/full opacity**; unselected states are dimmed
+- Selected states show **darker borders/full opacity**; unselected states are dimmed
 
 
 
 \- **Right-side overlaid bars (Plotly)**
 
-&nbsp; - **Outer bars**: % of **all households** voting Blue/Red/Other (household-weighted)
+- **Outer bars**: % of **all households** voting Blue/Red/Other (household-weighted)
 
-&nbsp; - **Inner bars**: % of **all households on SNAP** that voted that party (overlay)
+- **Inner bars**: % of **all households on SNAP** that voted that party (overlay)
 
-&nbsp; - Updates live as you select states (multi-select) or **Clear** selections
+- Updates live as you select states (multi-select) or **Clear** selections
 
 
 
 \- **Dashboard pills**
 
-&nbsp; - Total votes, total households on SNAP, red counties, blue counties (K/M formatting)
+- Total votes, total households on SNAP, red counties, blue counties (K/M formatting)
 
 
 
@@ -80,9 +80,9 @@ source("build\_snap\_2024\_dashboard.R")
 
 \- **SNAP participation**: ACS 2019–2023 5-year, Data Profile  
 
-&nbsp; - `DP03\_0074PE` — % of households on SNAP  
+- `DP03\_0074PE` — % of households on SNAP  
 
-&nbsp; - `DP02\_0001E` — total households
+- `DP02\_0001E` — total households
 
 \- **2024 County Results**: County-level U.S. Presidential results (public CSV)
 
@@ -106,7 +106,7 @@ source("build\_snap\_2024\_dashboard.R")
 
 \- Packages (auto-installed if missing):  
 
-&nbsp; `dplyr`, `sf`, `tigris`, `rmapshaper`, `tidycensus`, `readr`, `stringr`, `htmltools`, `jsonlite`, `tidyr`
+`dplyr`, `sf`, `tigris`, `rmapshaper`, `tidycensus`, `readr`, `stringr`, `htmltools`, `jsonlite`, `tidyr`
 
 
 
@@ -128,23 +128,23 @@ Optional:
 
 2\. **(Optional) Use your own Census API key**
 
-&nbsp;  ```r
+ ```r
 
-&nbsp;  tidycensus::census\_api\_key("YOUR\_REAL\_KEY", install = TRUE)
+ tidycensus::census\_api\_key("YOUR\_REAL\_KEY", install = TRUE)
 
-&nbsp;  ```
+ ```
 
-&nbsp;  Restart R. The script also sets the key for the current session.
+ Restart R. The script also sets the key for the current session.
 
 3\. **Build**
 
-&nbsp;  ```r
+ ```r
 
-&nbsp;  source("build\_snap\_2024\_dashboard.R")
+ source("build\_snap\_2024\_dashboard.R")
 
-&nbsp;  ```
+ ```
 
-&nbsp;  Open `snap\_2024\_dashboard.html` in your browser.
+ Open `snap\_2024\_dashboard.html` in your browser.
 
 
 
@@ -202,11 +202,11 @@ In `build\_snap\_2024\_dashboard.R`:
 
 PALETTE <- list(
 
-&nbsp; BLUE\_LIGHT = "#dbe9f6", BLUE\_DARK = "#084081",  # Dem ramp (edit as desired)
+BLUE\_LIGHT = "#dbe9f6", BLUE\_DARK = "#084081",  # Dem ramp (edit as desired)
 
-&nbsp; RED\_LIGHT  = "#fddbcc", RED\_DARK  = "#99000d",  # GOP ramp
+RED\_LIGHT  = "#fddbcc", RED\_DARK  = "#99000d",  # GOP ramp
 
-&nbsp; PURP\_LIGHT = "#e9e4f2", PURP\_DARK = "#4a1486"   # Other ramp
+PURP\_LIGHT = "#e9e4f2", PURP\_DARK = "#4a1486"   # Other ramp
 
 )
 
@@ -266,31 +266,31 @@ renv::restore()
 
 \- **Blank page / nothing loads**  
 
-&nbsp; Open the browser console (F12) and look for errors (e.g., JSON parse). This can occur if the generated HTML was edited and quotes were corrupted. Re-run the script and avoid manual edits in the HTML.
+Open the browser console (F12) and look for errors (e.g., JSON parse). This can occur if the generated HTML was edited and quotes were corrupted. Re-run the script and avoid manual edits in the HTML.
 
 
 
 \- **No tooltips**  
 
-&nbsp; Ensure you’re hovering over counties (not just borders). Tooltips show county name + SNAP% + HH + est. SNAP HH.
+Ensure you’re hovering over counties (not just borders). Tooltips show county name + SNAP% + HH + est. SNAP HH.
 
 
 
 \- **Selector looks tall**  
 
-&nbsp; It’s compact at ~100px height; adjust in the `<style>` block (`select#stateSelect`) if desired.
+It’s compact at ~100px height; adjust in the `<style>` block (`select#stateSelect`) if desired.
 
 
 
 \- **Initial load feels heavy**  
 
-&nbsp; Reduce geometry size by lowering the `keep` value:
+Reduce geometry size by lowering the `keep` value:
 
-&nbsp; ```r
+```r
 
-&nbsp; counties\_sf <- rmapshaper::ms\_simplify(counties\_sf, keep = 0.18, keep\_shapes = TRUE)
+counties\_sf <- rmapshaper::ms\_simplify(counties\_sf, keep = 0.18, keep\_shapes = TRUE)
 
-&nbsp; ```
+```
 
 
 
