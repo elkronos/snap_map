@@ -1,4 +1,4 @@
-\# SNAP × 2024 County Winners — Interactive Map (R → Self-Contained HTML)
+# SNAP × 2024 County Winners — Interactive Map (R → Self-Contained HTML)
 
 
 
@@ -10,7 +10,7 @@ An R script that builds a \*\*single, self-contained HTML dashboard\*\* mapping 
 
 
 
-\## Quickstart
+## Quickstart
 
 
 
@@ -34,7 +34,7 @@ source("build\_snap\_2024\_dashboard.R")
 
 
 
-\## What You Get
+## What You Get
 
 
 
@@ -74,7 +74,7 @@ source("build\_snap\_2024\_dashboard.R")
 
 
 
-\## Data Sources
+## Data Sources
 
 
 
@@ -98,7 +98,7 @@ source("build\_snap\_2024\_dashboard.R")
 
 
 
-\## Requirements
+## Requirements
 
 
 
@@ -120,7 +120,7 @@ Optional:
 
 
 
-\## Setup
+## Setup
 
 
 
@@ -152,7 +152,7 @@ Optional:
 
 
 
-\## How It Works
+## How It Works
 
 
 
@@ -174,7 +174,7 @@ Optional:
 
 
 
-\## Hosting
+## Hosting
 
 
 
@@ -190,7 +190,7 @@ Optional:
 
 
 
-\## Customization
+## Customization
 
 
 
@@ -216,7 +216,7 @@ Swap these for brand/accessible palettes (e.g., Okabe–Ito).
 
 
 
-\### SNAP binning (map shading)
+### SNAP binning (map shading)
 
 \- Default \*\*5\*\* quantiles; change at runtime from \*\*2–10\*\* via the gear menu.  
 
@@ -234,7 +234,7 @@ Swap these for brand/accessible palettes (e.g., Okabe–Ito).
 
 
 
-\## Reproducibility
+## Reproducibility
 
 
 
@@ -260,7 +260,7 @@ renv::restore()
 
 
 
-\## Troubleshooting
+## Troubleshooting
 
 
 
