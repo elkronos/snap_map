@@ -14,7 +14,7 @@ An R script that builds a **single, self-contained HTML dashboard** mapping **20
 
 
 
-~~~r
+```r
 
 \# In R
 
@@ -22,7 +22,7 @@ source("build\_snap\_2024\_dashboard.R")
 
 \# Output: snap\_2024\_dashboard.html  (open in your browser or host statically)
 
-~~~
+```
 
 
 
@@ -128,21 +128,21 @@ Optional:
 
 2\. **(Optional) Use your own Census API key**
 
-&nbsp;  ~~~r
+&nbsp;  ```r
 
 &nbsp;  tidycensus::census\_api\_key("YOUR\_REAL\_KEY", install = TRUE)
 
-&nbsp;  ~~~
+&nbsp;  ```
 
 &nbsp;  Restart R. The script also sets the key for the current session.
 
 3\. **Build**
 
-&nbsp;  ~~~r
+&nbsp;  ```r
 
 &nbsp;  source("build\_snap\_2024\_dashboard.R")
 
-&nbsp;  ~~~
+&nbsp;  ```
 
 &nbsp;  Open `snap\_2024\_dashboard.html` in your browser.
 
@@ -198,7 +198,7 @@ Optional:
 
 In `build\_snap\_2024\_dashboard.R`:
 
-~~~r
+```r
 
 PALETTE <- list(
 
@@ -210,7 +210,7 @@ PALETTE <- list(
 
 )
 
-~~~
+```
 
 Swap these for brand/accessible palettes (e.g., Okabe–Ito).
 
@@ -238,7 +238,7 @@ Swap these for brand/accessible palettes (e.g., Okabe–Ito).
 
 
 
-~~~r
+```r
 
 install.packages("renv")
 
@@ -252,7 +252,7 @@ renv::snapshot()
 
 renv::restore()
 
-~~~
+```
 
 
 
@@ -286,11 +286,11 @@ renv::restore()
 
 &nbsp; Reduce geometry size by lowering the `keep` value:
 
-&nbsp; ~~~r
+&nbsp; ```r
 
 &nbsp; counties\_sf <- rmapshaper::ms\_simplify(counties\_sf, keep = 0.18, keep\_shapes = TRUE)
 
-&nbsp; ~~~
+&nbsp; ```
 
 
 
