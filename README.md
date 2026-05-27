@@ -1,6 +1,6 @@
 # SNAP × 2024 County Winners — Interactive Map (R → Self-Contained HTML)
 
-
+This is a personal project. It is not affiliated with, endorsed by, or connected to any organization. It uses public data sources only and was developed independently on personal time. No confidential, proprietary, or non-public information is included.
 
 An R script that builds a **single, self-contained HTML dashboard** mapping **2024 U.S. county presidential winners** alongside **ACS 2023 SNAP participation**. Counties are shaded by **party hue** with **fill depth by SNAP% (quantile-binned)**; the right panel displays **overlaid bars** (outer: % of all households voting BLUE/RED/OTHER; inner: % of all households **on SNAP** that voted that party). Features include state multi-select, hover tooltips, compact KPI pills, and a gear to change bin counts (2–10).
 
